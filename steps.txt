@@ -1,1 +1,3 @@
 1. made new repository.
+2. made html, js, and css files.
+3. added basic html to both html files, and css to css file.
