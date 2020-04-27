@@ -3,10 +3,6 @@ var startButton = document.querySelector(".startButton");
 var answerBox = document.querySelector("#answers")
 var body = document.getElementById("answers");
 
-
-
-var score = [];
-
 //calls first question and starts the test
 startButton.addEventListener("click", function(event) {
     event.preventDefault();
@@ -37,7 +33,7 @@ startButton.addEventListener("click", function(event) {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            score.push(10);
+            localStorage.setItem("score1", 10)
 
             setTimeout(function() { secondQuestion(); }, 1000);
         });
@@ -102,6 +98,8 @@ function secondQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
+            localStorage.setItem("score2", 10)
+
             setTimeout(function() { thirdQuestion(); }, 1000);
         });
 
@@ -165,6 +163,8 @@ function thirdQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
+            localStorage.setItem("score3", 10)
+
             setTimeout(function() { fourthQuestion(); }, 1000);
         });
         //wrong answers
@@ -201,7 +201,7 @@ function thirdQuestion() {
 
 //fourth question
 function fourthQuestion() {
-    questionText.textContent = "3. Third Question";
+    questionText.textContent = "4. Fourth Question";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
@@ -226,6 +226,8 @@ function fourthQuestion() {
             var correctAnswer = document.createElement("p");
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
+
+            localStorage.setItem("score4", 10)
 
             setTimeout(function() { fifthQuestion(); }, 1000);
         });
@@ -263,7 +265,7 @@ function fourthQuestion() {
 
 //fifth question
 function fifthQuestion() {
-    questionText.textContent = "3. Third Question";
+    questionText.textContent = "5. Fifth Question";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
@@ -288,6 +290,8 @@ function fifthQuestion() {
             var correctAnswer = document.createElement("p");
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
+
+            localStorage.setItem("score5", 10)
 
             setTimeout(function() { submitScore(); }, 1000);
         });
@@ -327,4 +331,22 @@ function fifthQuestion() {
 function submitScore() {
     questionText.textContent = "Your Score!";
     answerBox.innerHTML = "";
+
+    var result = (JSON.parse(localStorage.getItem("score1")) + JSON.parse(localStorage.getItem("score2")) + JSON.parse(localStorage.getItem("score3")) + JSON.parse(localStorage.getItem("score4")) + JSON.parse(localStorage.getItem("score5")));
+    localStorage.setItem("result", JSON.stringify(result));
+
+    var submitResult = document.createElement("p");
+    submitResult.innerHTML = "Congrats! Your score is:"
+    body.appendChild(submitResult);
+
+    var displayResult = document.createElement("p");
+    displayResult.textContent = result;
+    body.appendChild(displayResult);
+
+    var submitName = document.createElement("input");
+    body.appendChild(submitName);
+
+    var submitButton = document.createElement("p");
+    submitButton.innerHTML = "<button>Submit High Score</button>";
+    body.appendChild(submitButton);
 }
