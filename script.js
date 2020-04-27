@@ -165,7 +165,7 @@ function thirdQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            // setTimeout(function() { fourthQuestion(); }, 1000);
+            setTimeout(function() { fourthQuestion(); }, 1000);
         });
         //wrong answers
         answerOne.addEventListener("click", function(event) {
@@ -175,7 +175,7 @@ function thirdQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
-            // setTimeout(function() { fourthQuestion(); }, 1000);
+            setTimeout(function() { fourthQuestion(); }, 1000);
         });
 
         answerTwo.addEventListener("click", function(event) {
@@ -185,7 +185,7 @@ function thirdQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
-            // setTimeout(function() { fourthQuestion(); }, 1000);
+            setTimeout(function() { fourthQuestion(); }, 1000);
         });
 
         answerThree.addEventListener("click", function(event) {
@@ -195,6 +195,136 @@ function thirdQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
-            // setTimeout(function() { fourthQuestion(); }, 1000);
+            setTimeout(function() { fourthQuestion(); }, 1000);
         });
 };
+
+//fourth question
+function fourthQuestion() {
+    questionText.textContent = "3. Third Question";
+    answerBox.innerHTML = "";
+
+    var answerOne = document.createElement("li");
+    answerOne.innerHTML = "<button>answer 1</button>";
+    body.appendChild(answerOne);
+
+    var answerTwo = document.createElement("li");
+    answerTwo.innerHTML = "<button>answer 2</button>";
+    body.appendChild(answerTwo);
+
+    var answerThree = document.createElement("li");
+    answerThree.innerHTML = "<button>answer 3</button>";
+    body.appendChild(answerThree);
+
+    var answerFour = document.createElement("li");
+    answerFour.innerHTML = "<button>answer 4</button>";
+    body.appendChild(answerFour);
+        //correct answer
+        answerThree.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var correctAnswer = document.createElement("p");
+            correctAnswer.innerHTML = "<p>Correct!</p>";
+            body.appendChild(correctAnswer);
+
+            setTimeout(function() { fifthQuestion(); }, 1000);
+        });
+        //wrong answers
+        answerOne.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { fifthQuestion(); }, 1000);
+        });
+
+        answerTwo.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { fifthQuestion(); }, 1000);
+        });
+
+        answerFour.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { fifthQuestion(); }, 1000);
+        });
+};
+
+//fifth question
+function fifthQuestion() {
+    questionText.textContent = "3. Third Question";
+    answerBox.innerHTML = "";
+
+    var answerOne = document.createElement("li");
+    answerOne.innerHTML = "<button>answer 1</button>";
+    body.appendChild(answerOne);
+
+    var answerTwo = document.createElement("li");
+    answerTwo.innerHTML = "<button>answer 2</button>";
+    body.appendChild(answerTwo);
+
+    var answerThree = document.createElement("li");
+    answerThree.innerHTML = "<button>answer 3</button>";
+    body.appendChild(answerThree);
+
+    var answerFour = document.createElement("li");
+    answerFour.innerHTML = "<button>answer 4</button>";
+    body.appendChild(answerFour);
+        //correct answer
+        answerOne.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var correctAnswer = document.createElement("p");
+            correctAnswer.innerHTML = "<p>Correct!</p>";
+            body.appendChild(correctAnswer);
+
+            setTimeout(function() { submitScore(); }, 1000);
+        });
+        //wrong answers
+        answerTwo.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { submitScore(); }, 1000);
+        });
+
+        answerThree.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { submitScore(); }, 1000);
+        });
+
+        answerFour.addEventListener("click", function(event) {
+            event.preventDefault();
+        
+            var wrongAnswer = document.createElement("p");
+            wrongAnswer.innerHTML = "<p>Wrong!</p>";
+            body.appendChild(wrongAnswer);
+
+            setTimeout(function() { submitScore(); }, 1000);
+        });
+};
+
+//Submit score
+function submitScore() {
+    questionText.textContent = "Your Score!";
+    answerBox.innerHTML = "";
+}
