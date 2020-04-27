@@ -340,7 +340,7 @@ function submitScore() {
     body.appendChild(submitResult);
 
     var displayResult = document.createElement("p");
-    displayResult.textContent = result;
+    displayResult.textContent = result + " out of 50";
     body.appendChild(displayResult);
 
     var submitName = document.createElement("input");

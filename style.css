@@ -14,3 +14,8 @@ button {
     display: inline-block;
     font-size: 16px;
   }
+
+  #timer {
+      float: right;
+      margin-right: 20px;
+  }
