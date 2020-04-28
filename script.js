@@ -3,9 +3,32 @@ var startButton = document.querySelector(".startButton");
 var answerBox = document.querySelector("#answers")
 var body = document.getElementById("answers");
 
+var result = [];
+
+//timer function
+function countdown(seconds) {
+    var seconds = 60;
+    function tick() {
+        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+        var counter = document.getElementById("counter");
+        var currentSeconds = seconds-1
+        seconds--;
+        counter.innerHTML = currentSeconds.toString();
+        if( seconds > 0 ) {
+            setTimeout(tick, 1000);
+        } else {
+            if(seconds < 1){
+                submitScore();
+            }
+        }
+    }
+    tick();
+}
+
 //calls first question and starts the test
 startButton.addEventListener("click", function(event) {
     event.preventDefault();
+    countdown();
 
     questionText.textContent = "1. First Question";
     answerBox.innerHTML = "";
@@ -33,7 +56,7 @@ startButton.addEventListener("click", function(event) {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            localStorage.setItem("score1", 10)
+            result.push(10);
 
             setTimeout(function() { secondQuestion(); }, 1000);
         });
@@ -45,6 +68,8 @@ startButton.addEventListener("click", function(event) {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { secondQuestion(); }, 1000);
         });
 
@@ -55,6 +80,8 @@ startButton.addEventListener("click", function(event) {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { secondQuestion(); }, 1000);
         });
 
@@ -64,6 +91,8 @@ startButton.addEventListener("click", function(event) {
             var wrongAnswer = document.createElement("p");
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
+
+            result.push(0);
 
             setTimeout(function() { secondQuestion(); }, 1000);
         });
@@ -98,7 +127,7 @@ function secondQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            localStorage.setItem("score2", 10)
+            result.push(10);
 
             setTimeout(function() { thirdQuestion(); }, 1000);
         });
@@ -111,6 +140,8 @@ function secondQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { thirdQuestion(); }, 1000);
         });
 
@@ -121,6 +152,8 @@ function secondQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { thirdQuestion(); }, 1000);
         });
 
@@ -130,6 +163,8 @@ function secondQuestion() {
             var wrongAnswer = document.createElement("p");
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
+
+            result.push(0);
 
             setTimeout(function() { thirdQuestion(); }, 1000);
         });
@@ -163,7 +198,7 @@ function thirdQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            localStorage.setItem("score3", 10)
+            result.push(10);
 
             setTimeout(function() { fourthQuestion(); }, 1000);
         });
@@ -175,6 +210,8 @@ function thirdQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { fourthQuestion(); }, 1000);
         });
 
@@ -185,6 +222,8 @@ function thirdQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { fourthQuestion(); }, 1000);
         });
 
@@ -194,6 +233,8 @@ function thirdQuestion() {
             var wrongAnswer = document.createElement("p");
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
+
+            result.push(0);
 
             setTimeout(function() { fourthQuestion(); }, 1000);
         });
@@ -227,7 +268,7 @@ function fourthQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            localStorage.setItem("score4", 10)
+            result.push(10);
 
             setTimeout(function() { fifthQuestion(); }, 1000);
         });
@@ -239,6 +280,8 @@ function fourthQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { fifthQuestion(); }, 1000);
         });
 
@@ -249,6 +292,8 @@ function fourthQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { fifthQuestion(); }, 1000);
         });
 
@@ -258,6 +303,8 @@ function fourthQuestion() {
             var wrongAnswer = document.createElement("p");
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
+
+            result.push(0);
 
             setTimeout(function() { fifthQuestion(); }, 1000);
         });
@@ -291,7 +338,7 @@ function fifthQuestion() {
             correctAnswer.innerHTML = "<p>Correct!</p>";
             body.appendChild(correctAnswer);
 
-            localStorage.setItem("score5", 10)
+            result.push(10);
 
             setTimeout(function() { submitScore(); }, 1000);
         });
@@ -303,6 +350,8 @@ function fifthQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { submitScore(); }, 1000);
         });
 
@@ -312,6 +361,8 @@ function fifthQuestion() {
             var wrongAnswer = document.createElement("p");
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
+
+            result.push(0);
 
             setTimeout(function() { submitScore(); }, 1000);
         });
@@ -323,6 +374,8 @@ function fifthQuestion() {
             wrongAnswer.innerHTML = "<p>Wrong!</p>";
             body.appendChild(wrongAnswer);
 
+            result.push(0);
+
             setTimeout(function() { submitScore(); }, 1000);
         });
 };
@@ -332,21 +385,34 @@ function submitScore() {
     questionText.textContent = "Your Score!";
     answerBox.innerHTML = "";
 
-    var result = (JSON.parse(localStorage.getItem("score1")) + JSON.parse(localStorage.getItem("score2")) + JSON.parse(localStorage.getItem("score3")) + JSON.parse(localStorage.getItem("score4")) + JSON.parse(localStorage.getItem("score5")));
-    localStorage.setItem("result", JSON.stringify(result));
-
     var submitResult = document.createElement("p");
     submitResult.innerHTML = "Congrats! Your score is:"
     body.appendChild(submitResult);
 
     var displayResult = document.createElement("p");
-    displayResult.textContent = result + " out of 50";
+    displayResult.textContent = (result[0] + result[1] + result[2] + result[3] + result[4] + " out of 50");
     body.appendChild(displayResult);
 
     var submitName = document.createElement("input");
+    // submitName.setAttribute("id", "nameInput");
     body.appendChild(submitName);
 
-    var submitButton = document.createElement("p");
-    submitButton.innerHTML = "<button>Submit High Score</button>";
+    var submitButton = document.createElement("button");
+    submitButton.innerHTML = "Submit High Score";
     body.appendChild(submitButton);
+
+    var highScores = document.createElement("p");
+    highScores.innerHTML = "Go to <a href='high-scores.html'>High Scores</a>";
+    body.appendChild(highScores);
+
+    localStorage.setItem("result", JSON.stringify(result));
+
+    submitButton.addEventListener("click", function(event) {
+        event.preventDefault();
+    
+        var user = submitName.value.trim();
+    
+        console.log(user);
+        localStorage.setItem("user", JSON.stringify(user));
+    });
 }
