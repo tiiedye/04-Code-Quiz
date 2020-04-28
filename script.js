@@ -4,12 +4,14 @@ var answerBox = document.querySelector("#answers")
 var body = document.getElementById("answers");
 
 var result = [];
+var nameScore = [];
+
+console.log(nameScore);
 
 //timer function
 function countdown(seconds) {
     var seconds = 60;
     function tick() {
-        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
         var counter = document.getElementById("counter");
         var currentSeconds = seconds-1
         seconds--;
@@ -394,7 +396,7 @@ function submitScore() {
     body.appendChild(displayResult);
 
     var submitName = document.createElement("input");
-    // submitName.setAttribute("id", "nameInput");
+    submitName.setAttribute("id", "nameInput");
     body.appendChild(submitName);
 
     var submitButton = document.createElement("button");
@@ -412,7 +414,9 @@ function submitScore() {
     
         var user = submitName.value.trim();
     
-        console.log(user);
         localStorage.setItem("user", JSON.stringify(user));
+
+        totalScore = (result[0] + result[1] + result[2] + result[3] + result[4]);
+        localStorage.setItem("totalScore", totalScore);
     });
 }

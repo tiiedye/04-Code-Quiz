@@ -1,4 +1,10 @@
 1. made new repository.
 2. made html, js, and css files.
 3. added basic html to both html files, and css to css file.
-4. started work in js file by adding variables and functions
+4. started work in js file by adding variables and functions.
+5. finished adding all the questions and made sure they all linked to eachother and triggered the correct events.
+6. added a submit score function.
+7. added a timer that starts on "start quiz", if it hits 0 it automatically brings you to submit score.
+8. saved score and name that is inputted to local storage
+9. began work on high score page.
+10. made new javascript file for high scores.
