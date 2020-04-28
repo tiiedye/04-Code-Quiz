@@ -32,23 +32,23 @@ startButton.addEventListener("click", function(event) {
     event.preventDefault();
     countdown();
 
-    questionText.textContent = "1. First Question";
+    questionText.textContent = "1. _____ is the standard markup language for web pages.";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
-    answerOne.innerHTML = "<button>answer 1</button>";
+    answerOne.innerHTML = "<button>HTML</button>";
     body.appendChild(answerOne);
 
     var answerTwo = document.createElement("li");
-    answerTwo.innerHTML = "<button>answer 2</button>";
+    answerTwo.innerHTML = "<button>CSS</button>";
     body.appendChild(answerTwo);
 
     var answerThree = document.createElement("li");
-    answerThree.innerHTML = "<button>answer 3</button>";
+    answerThree.innerHTML = "<button>JavaScript</button>";
     body.appendChild(answerThree);
 
     var answerFour = document.createElement("li");
-    answerFour.innerHTML = "<button>answer 4</button>";
+    answerFour.innerHTML = "<button>jQuery</button>";
     body.appendChild(answerFour);
         //correctAnswer
         answerOne.addEventListener("click", function(event) {
@@ -103,23 +103,23 @@ startButton.addEventListener("click", function(event) {
 //second question
 
 function secondQuestion() {
-    questionText.textContent = "2. Second Question";
+    questionText.textContent = "2. What does CSS stand for?";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
-    answerOne.innerHTML = "<button>answer 1</button>";
+    answerOne.innerHTML = "<button>Cats Snuggle Snickerdoodles</button>";
     body.appendChild(answerOne);
 
     var answerTwo = document.createElement("li");
-    answerTwo.innerHTML = "<button>answer 2</button>";
+    answerTwo.innerHTML = "<button>Can't See Screen</button>";
     body.appendChild(answerTwo);
 
     var answerThree = document.createElement("li");
-    answerThree.innerHTML = "<button>answer 3</button>";
+    answerThree.innerHTML = "<button>Cascading Stlye Sheet</button>";
     body.appendChild(answerThree);
 
     var answerFour = document.createElement("li");
-    answerFour.innerHTML = "<button>answer 4</button>";
+    answerFour.innerHTML = "<button>Complete Simple Syntax</button>";
     body.appendChild(answerFour);
         //correct answer
         answerThree.addEventListener("click", function(event) {
@@ -174,23 +174,23 @@ function secondQuestion() {
 
 //third question
 function thirdQuestion() {
-    questionText.textContent = "3. Third Question";
+    questionText.textContent = "3. Variables CANNOT be which one of these?";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
-    answerOne.innerHTML = "<button>answer 1</button>";
+    answerOne.innerHTML = "<button>Booleans</button>";
     body.appendChild(answerOne);
 
     var answerTwo = document.createElement("li");
-    answerTwo.innerHTML = "<button>answer 2</button>";
+    answerTwo.innerHTML = "<button>Strings</button>";
     body.appendChild(answerTwo);
 
     var answerThree = document.createElement("li");
-    answerThree.innerHTML = "<button>answer 3</button>";
+    answerThree.innerHTML = "<button>Numbers</button>";
     body.appendChild(answerThree);
 
     var answerFour = document.createElement("li");
-    answerFour.innerHTML = "<button>answer 4</button>";
+    answerFour.innerHTML = "<button>Alerts</button>";
     body.appendChild(answerFour);
         //correct answer
         answerFour.addEventListener("click", function(event) {
@@ -244,23 +244,23 @@ function thirdQuestion() {
 
 //fourth question
 function fourthQuestion() {
-    questionText.textContent = "4. Fourth Question";
+    questionText.textContent = "4. ______ can update and change HTML and CSS on a webpage.";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
-    answerOne.innerHTML = "<button>answer 1</button>";
+    answerOne.innerHTML = "<button>MochaScript</button>";
     body.appendChild(answerOne);
 
     var answerTwo = document.createElement("li");
-    answerTwo.innerHTML = "<button>answer 2</button>";
+    answerTwo.innerHTML = "<button>JavaChip</button>";
     body.appendChild(answerTwo);
 
     var answerThree = document.createElement("li");
-    answerThree.innerHTML = "<button>answer 3</button>";
+    answerThree.innerHTML = "<button>JavaScript</button>";
     body.appendChild(answerThree);
 
     var answerFour = document.createElement("li");
-    answerFour.innerHTML = "<button>answer 4</button>";
+    answerFour.innerHTML = "<button>Coffee???</button>";
     body.appendChild(answerFour);
         //correct answer
         answerThree.addEventListener("click", function(event) {
@@ -314,23 +314,23 @@ function fourthQuestion() {
 
 //fifth question
 function fifthQuestion() {
-    questionText.textContent = "5. Fifth Question";
+    questionText.textContent = "5. The purpose of _______ is to make it much easier to use JavaScript on your website.";
     answerBox.innerHTML = "";
 
     var answerOne = document.createElement("li");
-    answerOne.innerHTML = "<button>answer 1</button>";
+    answerOne.innerHTML = "<button>jQuery</button>";
     body.appendChild(answerOne);
 
     var answerTwo = document.createElement("li");
-    answerTwo.innerHTML = "<button>answer 2</button>";
+    answerTwo.innerHTML = "<button>jPerry</button>";
     body.appendChild(answerTwo);
 
     var answerThree = document.createElement("li");
-    answerThree.innerHTML = "<button>answer 3</button>";
+    answerThree.innerHTML = "<button>jMerry</button>";
     body.appendChild(answerThree);
 
     var answerFour = document.createElement("li");
-    answerFour.innerHTML = "<button>answer 4</button>";
+    answerFour.innerHTML = "<button>jShorthand</button>";
     body.appendChild(answerFour);
         //correct answer
         answerOne.addEventListener("click", function(event) {
