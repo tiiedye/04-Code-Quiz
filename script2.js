@@ -6,13 +6,10 @@ var totalScore = localStorage.getItem("totalScore", JSON.stringify(totalScore));
 var nameScore = [];
 
 var displayUser = ("Name: " + user + ", Score: " + totalScore);
-
 nameScore.push(displayUser);
 
-console.log(nameScore);
-
-
 for (var i = 0; i < nameScore.length; i++) {
+
     var display = nameScore[i];
 
     var newEntry = document.createElement("p");
